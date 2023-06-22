@@ -19,4 +19,4 @@ console.log({
   product2: product[1]
 })
 
-console.log(calcStock())
+console.log(calcStock)
