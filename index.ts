@@ -2,7 +2,7 @@
 //     console.log(`Hola ${name}, tienes ${age} años`)
 // }
 
-import { EnumType } from "typescript"
+// import { EnumType } from "typescript"
 
 // saludar({name: 'Juan', age: 18})
 
