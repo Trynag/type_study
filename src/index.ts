@@ -136,11 +136,7 @@
 // // Uso de type in values con 3x3
 // type CellValue = 'X' | 'O' | ''
 // type LineValue = readonly [CellValue, CellValue, CellValue]
-// type GameBoard = [
-//     [CellValue, CellValue, CellValue],
-//     [CellValue, CellValue, CellValue],
-//     [CellValue, CellValue, CellValue],
-// ]
+// type GameBoard = [LineValue, LineValue, LineValue]
 
 // const game: GameBoard = [
 //     ['', '', ''],
@@ -192,3 +188,7 @@
 
 // // typeof -> para types o tipos basicos
 // // instanceof --> para instancias
+
+// Definir una tupla
+
+// const user: [string, number] = ['trynag', 7]
