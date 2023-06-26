@@ -192,3 +192,11 @@
 // Definir una tupla
 
 // const user: [string, number] = ['trynag', 7]
+
+// Uso del Unknow Type
+
+let unknowVar: unknown // <- declaracion
+
+if(typeof unknowVar === 'string') unknowVar.toUpperCase() // TS marca un error por que recomienda que se 
+                                                          // trabaje con el solamente cuando se haya realizado
+                                                          // una verificacion de tipo
