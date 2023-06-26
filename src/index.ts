@@ -195,8 +195,32 @@
 
 // Uso del Unknow Type
 
-let unknowVar: unknown // <- declaracion
+// let unknowVar: unknown // <- declaracion
 
-if(typeof unknowVar === 'string') unknowVar.toUpperCase() // TS marca un error por que recomienda que se 
-                                                          // trabaje con el solamente cuando se haya realizado
-                                                          // una verificacion de tipo
+// if(typeof unknowVar === 'string') unknowVar.toUpperCase() // TS marca un error por que recomienda que se 
+//                                                           // trabaje con el solamente cuando se haya realizado
+//                                                           // una verificacion de tipo
+
+
+// // Uso del Never Type
+
+let neverVar: never
+const withoutEnd = () => {
+    while(true) console.log("NUNCA PARES DE APRENDER") // Debido a que es un loop lo detecta como never
+}
+
+const fail = (message: string) => { // Tambien lo tipa como never
+    throw new Error(message)
+}
+
+const example = (input: unknown) => {
+    if (typeof input === 'string') return "It's string"
+    else if (Array.isArray(input)) return "It's array"
+
+    return fail('Not match')
+}
+
+console.log(example('Hi'))
+console.log(example([1, 1, 1]))
+console.log(example(1)) // <- Deberia fallar ❌
+console.log(example('Hi :')) // :smirk:
