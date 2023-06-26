@@ -2,6 +2,8 @@
 //     console.log(`Hola ${name}, tienes ${age} años`)
 // }
 
+// import { product  } from "./products/product.service"
+
 // import { EnumType } from "typescript"
 
 // saludar({name: 'Juan', age: 18})
@@ -204,23 +206,49 @@
 
 // // Uso del Never Type
 
-let neverVar: never
-const withoutEnd = () => {
-    while(true) console.log("NUNCA PARES DE APRENDER") // Debido a que es un loop lo detecta como never
+// let neverVar: never
+// const withoutEnd = () => {
+//     while(true) console.log("NUNCA PARES DE APRENDER") // Debido a que es un loop lo detecta como never
+// }
+
+// const fail = (message: string) => { // Tambien lo tipa como never
+//     throw new Error(message)
+// } 
+
+// const example = (input: unknown) => {
+//     if (typeof input === 'string') return "It's string"
+//     else if (Array.isArray(input)) return "It's array"
+
+//     return fail('Not match')
+// }
+
+// console.log(example('Hi'))
+// console.log(example([1, 1, 1]))
+// console.log(example(1)) // <- Deberia fallar ❌
+// console.log(example('Hi :')) // :smirk:
+
+// Uso del nullish-collecting 
+
+type Product = {
+    id: string
+    stock: number
+    isNew?: boolean // Los parametros opcionales deben ir al final
 }
 
-const fail = (message: string) => { // Tambien lo tipa como never
-    throw new Error(message)
+const createProduct = (product: {id: string, stock: number, isNew?: boolean}): Product => {
+    const {id, isNew} = product
+    return {
+        id,
+        stock: 20,
+        isNew: isNew ?? true // operador nullish-collecting. Ayuda a asignar valores por defecto ya que el
+                             // operador || presenta problemas con los falsy values
+    }
 }
 
-const example = (input: unknown) => {
-    if (typeof input === 'string') return "It's string"
-    else if (Array.isArray(input)) return "It's array"
+const p1 = createProduct({
+    id: 'P1',
+    stock: 12,
+    isNew: false
+})
+console.log("🚀 ~ file: index.ts:252 ~ p1:", p1)
 
-    return fail('Not match')
-}
-
-console.log(example('Hi'))
-console.log(example([1, 1, 1]))
-console.log(example(1)) // <- Deberia fallar ❌
-console.log(example('Hi :')) // :smirk:
