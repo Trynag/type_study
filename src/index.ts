@@ -272,3 +272,47 @@
 
 // Rest parameters
 // se le dice a los spreed operators como argumentos de funcion
+
+// Overload (Sobrecarga de funciones)
+
+// Ej: Queremos una funcion que cuando se le envie un string nos lo retorne como array y visebersa
+
+// Nico -> [N,i,c,o] -> string -> string[]
+// [N,i,c,o] -> Nico -> string -> string
+
+// Esto solo funciona en las funciones normales y POO
+
+// function parseStr(input: string | string[]): string | string[] {
+//     if (Array.isArray(input)) {
+//         return input.join('')
+//     } else {        
+//         return input.split('') // string
+//     }
+// }
+
+// const response = parseStr('Trynag')
+// console.log("🚀 ~ file: index.ts:294 ~ response:", response)
+
+// const response2 = parseStr(['T', 'r', 'y', 'n', 'a', 'g'])
+// console.log("🚀 ~ file: index.ts:297 ~ response2:", response2)
+
+// El problema que esto presenta es que TS no puede inferir cual es el resultado por que tenemos dos opciones,
+// por eso, si quieres realizar algo con ellas tenemos que hacer un asesoramiento de tipo ❌
+
+// solucion ✅
+
+function parseStr(input: string): string[] // De esta forma podemos hacer el tipado de la funcion que 
+function parseStr(input: string[]): string // presenta una sobrecarga
+
+function parseStr(input: string | string[]): string | string[] { // ejando los parametros de input y el retorno como unknow, setiamos la funcion con tipos genericos para agregar mas sobrecarga si se desea
+    if (Array.isArray(input)) return input.join('') // string[]
+    return input.split('') // string
+}
+
+const response = parseStr('Trynag')
+console.log("🚀 ~ file: index.ts:294 ~ response:", response)
+
+const response2 = parseStr(['T', 'r', 'y', 'n', 'a', 'g'])
+console.log("🚀 ~ file: index.ts:297 ~ response2:", response2)
+
+// ahora TS si puede inferir el tipo de dato que le estamos asignando debido a la sobrecarga
