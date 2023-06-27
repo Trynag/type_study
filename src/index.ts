@@ -269,3 +269,6 @@
 // const p1 = createProduct('P1', true)
 
 // console.log("🚀 ~ file: index.ts:252 ~ p1:", p1)
+
+// Rest parameters
+// se le dice a los spreed operators como argumentos de funcion
