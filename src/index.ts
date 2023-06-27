@@ -301,18 +301,22 @@
 
 // solucion ✅
 
-function parseStr(input: string): string[] // De esta forma podemos hacer el tipado de la funcion que 
-function parseStr(input: string[]): string // presenta una sobrecarga
+// function parseStr(input: string): string[] // De esta forma podemos hacer el tipado de la funcion que 
+// function parseStr(input: string[]): string // presenta una sobrecarga
 
-function parseStr(input: string | string[]): string | string[] { // ejando los parametros de input y el retorno como unknow, setiamos la funcion con tipos genericos para agregar mas sobrecarga si se desea
-    if (Array.isArray(input)) return input.join('') // string[]
-    return input.split('') // string
-}
+// function parseStr(input: string | string[]): string | string[] { // ejando los parametros de input y el retorno como unknow, setiamos la funcion con tipos genericos para agregar mas sobrecarga si se desea
+//     if (Array.isArray(input)) return input.join('') // string[]
+//     return input.split('') // string
+// }
 
-const response = parseStr('Trynag')
-console.log("🚀 ~ file: index.ts:294 ~ response:", response)
+// const response = parseStr('Trynag')
+// console.log("🚀 ~ file: index.ts:294 ~ response:", response)
 
-const response2 = parseStr(['T', 'r', 'y', 'n', 'a', 'g'])
-console.log("🚀 ~ file: index.ts:297 ~ response2:", response2)
+// const response2 = parseStr(['T', 'r', 'y', 'n', 'a', 'g'])
+// console.log("🚀 ~ file: index.ts:297 ~ response2:", response2)
 
 // ahora TS si puede inferir el tipo de dato que le estamos asignando debido a la sobrecarga
+
+// Recomendaciones de buenas practicas sobre la sobrecarga
+// 1. Si tenemos un tipo unknow o any en parametros y devolucion, siempre debemos dejarlo al final
+// 2. Si la sobre carga solo afecta el numero de parametros deberiamos evaluar si es necesario o solo usar union types con parametros opcionales ... (a: string, b?: number) 
