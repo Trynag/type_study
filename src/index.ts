@@ -229,26 +229,43 @@
 
 // Uso del nullish-collecting 
 
-type Product = {
-    id: string
-    stock: number
-    isNew?: boolean // Los parametros opcionales deben ir al final
-}
+// type Product = {
+//     id: string
+//     stock: number
+//     isNew?: boolean // Los parametros opcionales deben ir al final
+// }
 
-const createProduct = (product: {id: string, stock: number, isNew?: boolean}): Product => {
-    const {id, isNew} = product
-    return {
-        id,
-        stock: 20,
-        isNew: isNew ?? true // operador nullish-collecting. Ayuda a asignar valores por defecto ya que el
-                             // operador || presenta problemas con los falsy values
-    }
-}
+// const createProduct = (product: {id: string, stock: number, isNew?: boolean}): Product => {
+//     const {id, isNew} = product
+//     return {
+//         id,
+//         stock: 20,
+//         isNew: isNew ?? true // operador nullish-collecting. Ayuda a asignar valores por defecto ya que el
+//                              // operador || presenta problemas con los falsy values
+//     }
+// }
 
-const p1 = createProduct({
-    id: 'P1',
-    stock: 12,
-    isNew: false
-})
-console.log("🚀 ~ file: index.ts:252 ~ p1:", p1)
+// const p1 = createProduct({
+//     id: 'P1',
+//     stock: 12,
+//     isNew: false
+// })
+// console.log("🚀 ~ file: index.ts:252 ~ p1:", p1)
 
+// Optional parameters 
+
+// const createProduct = (     //
+//     id: string | number,    //
+//     isNew: boolean = true,  //
+//     stock: number = 10      // Nada nuevo, esto es una funcionalidad de JS
+// ) => {
+//     return {
+//         id,
+//         isNew,
+//         stock,
+//     }
+// }
+
+// const p1 = createProduct('P1', true)
+
+// console.log("🚀 ~ file: index.ts:252 ~ p1:", p1)
