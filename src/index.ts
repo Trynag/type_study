@@ -320,3 +320,5 @@
 // Recomendaciones de buenas practicas sobre la sobrecarga
 // 1. Si tenemos un tipo unknow o any en parametros y devolucion, siempre debemos dejarlo al final
 // 2. Si la sobre carga solo afecta el numero de parametros deberiamos evaluar si es necesario o solo usar union types con parametros opcionales ... (a: string, b?: number) 
+
+// Interfaces solamente se diferencias del type por que se pueden extender y no se pueden definir con un dato primitivo

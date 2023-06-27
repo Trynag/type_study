@@ -1,4 +1,4 @@
-import { addProduct, calcStock, product } from "./product.service";
+import { addProduct, calcStock, product } from "./product.service.mjs";
 
 addProduct({
   title: 'Pro1',
@@ -14,9 +14,6 @@ addProduct({
   sieze: 'XL'
 })
 
-console.log({
-  product1: product[0],
-  product2: product[1]
-})
+product.forEach(products => console.log(products))
 
-console.log(calcStock)
+console.log(calcStock())
