@@ -1,4 +1,4 @@
-export interface Category {
-  id: number
+import { BaseModel } from '../base.model.mjs'
+export interface Category extends BaseModel{
   name: string
 }
