@@ -5,6 +5,6 @@ export interface Product {
   title: string
   readonly createdAt: Date 
   stock: number 
-  sieze?: Size
+  size?: Size
   category: Category
 }

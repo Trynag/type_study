@@ -2,16 +2,16 @@ import { addProduct, calcStock, product } from "./product.service.mjs";
 
 addProduct({
   title: 'Pro1',
-  createdAt: new Date(),
   stock: 10,
-  sieze: 'XL'
+  size: 'XL',
+  categoryId: 1,
 })
 
 addProduct({
   title: 'Pro2',
-  createdAt: new Date(),
   stock: 10,
-  sieze: 'XL'
+  size: 'XL',
+  categoryId: 2,
 })
 
 product.forEach(products => console.log(products))
