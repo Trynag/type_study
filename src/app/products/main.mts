@@ -2,18 +2,17 @@ import { addProduct, calcStock, product } from "./product.service.mjs"
 import { faker } from '@faker-js/faker'
 
 addProduct({
-  id: .,
-  createdAt: new Date(),
+  id: faker.datatype.uuid,
+  description: 'a',
+  color: '#a',
+  price: 100,
+  isNew: true,
+  image: 'a',
+  tags: ['a'],
   updatedAt: new Date(),
-  title: 'Pro1',
   stock: 10,
-  sieze: 'XL',
-  category: {
-    id: '0001',
-    createdAt: new Date(),
-    updatedAt: new Date(),
-    name: 'P1'
-  }
+  title: '1',
+  categoryId: 2
 })
 
 
