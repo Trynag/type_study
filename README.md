@@ -33,3 +33,5 @@ Al contrario que partial, require, si toma los argumentos que necesita y nos obl
 ## Readonly
 
 Convierte todos los parametros en formato en modo de solo lectura
+
+new change
