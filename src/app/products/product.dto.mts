@@ -1,3 +1,4 @@
+import { faker } from "@faker-js/faker";
 import { Product } from "./product.model.mjs";
 
 export interface CreateProduct extends Omit <Product, 'category' | 'createdAt'> {
@@ -9,7 +10,7 @@ export interface CreateProduct extends Omit <Product, 'category' | 'createdAt'> 
   omitir y por medio de un pipe operator agregamos los demas datos que no se pueden
 */
 
-export type UpdateProductDto = Partial<Product>
+export type UpdateProductDto = Pick<Product, 'color'>
 
 /*
   el parctial type solament nos pone los tipos que le pasamos en modo opcional -> size?: Size, tambien se pueden poner como interface, aun asi, se pueden alterar
@@ -19,6 +20,7 @@ export interface UpdateProductDtoIntrface extends Partial<CreateProduct> {
 
 }
 
-type example = Required<Product>
-
-// Toma los datos obligatorios en su totalidad
+const prbe: UpdateProductDto = {
+  color: '#a',
+  size: 'XL'
+}

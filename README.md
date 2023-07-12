@@ -28,10 +28,11 @@ Es una forma de obtener argumentos sin necesidad de tenerlos obligatorios, lo qu
 
 ## Require
 
-Al contrario que partial, require, si toma los argumentos que necesita y nos obliga a pasarlos como parametros
+Al contrario que partial, require, si toma los argumentos que necesita y nos obliga a pasarlos como parametros.
+Tambien convierte los datos dejandolos todos en obligatorios
 
 ## Readonly
 
 Convierte todos los parametros en formato en modo de solo lectura
 
-new change
+new change.
