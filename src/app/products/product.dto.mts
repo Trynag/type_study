@@ -1,8 +1,7 @@
-import { faker } from "@faker-js/faker";
 import { Product } from "./product.model.mjs";
 
 export interface CreateProduct extends Omit <Product, 'category' | 'createdAt'> {
-  categoryId: number
+  categoryId: string
 }
 
 /* 
@@ -22,5 +21,4 @@ export interface UpdateProductDtoIntrface extends Partial<CreateProduct> {
 
 const prbe: UpdateProductDto = {
   color: '#a',
-  size: 'XL'
 }

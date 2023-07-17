@@ -1,4 +1,4 @@
-import { Category } from '../categories/categories.model.mjs'
+import { Category } from '../app/categories/categories.model.mjs'
 
 export type Size = 'S' | 'M' | 'L' | 'XL'
 export interface Product {

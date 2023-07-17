@@ -5,11 +5,13 @@ export const product: Product[] = []
 export const addProduct = (data: CreateProduct): Product => {
   const newProduct: Product = {
     ...data,
+   createdAt: new Date(),
+   category: {
+    name: "a",
     createdAt: new Date(),
-    category: {
-      id: data.categoryId,
-      name: 'name'
-    }
+    updatedAt: new Date(),
+    id: data.categoryId
+   }
   }
 
   product.push(newProduct)
