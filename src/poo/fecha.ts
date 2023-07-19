@@ -1,6 +1,6 @@
 class MyDate {
   constructor(
-    private year: number, 
+    protected year: number, 
     public month: number, 
     private _day: number
   ) {}
