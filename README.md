@@ -4,6 +4,22 @@ Estudio en typescript
 
 Todo esto sale del estudio de directos de Midudev y Platzi
 
+## Como ejecutar TS-NODE con ESNEXT
+
+Sencillo, primero tenemos que ejecutarlo con el tsconfig en un estado neutro, o sea sin opcionales de ts-node en el tsconfig,para pasarle la bandera --esm al compilador, luego de que funcione, agregarle los cambios del ts-node, o sea:
+
+"ts-node": {
+  "esm": true,
+  "experimentalSpecifierResolution": "node",
+}
+
+y tambien agregarle las opciones de compilador
+
+"include": ["/**/*.ts"],
+"exclude": ["node_modules"]
+
+El exclude es bueno solamente ejecutarlo en entornos de prueba, por que podriamos perder tipos que se requieran dentro de los modulos o optimizaciones realizadas dentro del mismo. Segun GPT  la exclusión de node_modules es una práctica común y útil, especialmente en proyectos grandes con muchas dependencias, para mejorar el tiempo de compilación y evitar posibles conflictos. Sin embargo, es esencial tener en cuenta las desventajas mencionadas y, en caso de que surjan problemas relacionados con tipos o dependencias, es posible que debas ajustar la configuración o eliminar temporalmente la exclusión para investigar y resolver el problema específico.
+
 ## DTO
 
 Clase 17 - tipos avanzados

@@ -52,5 +52,5 @@ class MyDate {
   }
 }
 
-const myDate = new MyDate(1, 1, 1)
+const myDate = new MyDate(1, 1, 14)
 console.log(myDate.testError())
