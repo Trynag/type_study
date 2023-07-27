@@ -22,3 +22,5 @@ class PostgresDriver implements Driver {
     return 'hi'
   }
 }
+
+console.log("hola")
