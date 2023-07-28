@@ -110,7 +110,7 @@
     "esm": true,
     "experimentalSpecifierResolution": "node",
   },
-  "include": ["src/**/*.ts"],
+  "include": ["src/**/*.ts", "src/migration-fn-poo/services/product-http-service.mts"],
   "exclude": ["node_modules"]
 }
 
