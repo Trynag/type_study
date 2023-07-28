@@ -1,6 +1,6 @@
 import { faker } from '@faker-js/faker';
 
-import { Product } from '../product.model';
+import { Product } from '../model/product.model';
 import { CreateProductDto } from '../dtos/product.dto';
 import { UpdateProductDto } from '../../app/products/product.dto.mjs';
 
@@ -42,7 +42,12 @@ export class ProductMemoryServices {
   findOne (id: Product['id']) {
     return this.products.find(item => item.id === id)
   }
+
+  getAll () {
+    return this.products
+  }
 }
+
 
 
 // export const addProduct = (data: CreateProductDto): Product => {
