@@ -1,4 +1,6 @@
 import { ProductMemoryServices } from "./services/product-memory.services";
+import { ProductHttpService } from "./services/product-http-service";
+import process from 'node:process';
 
 const productService = new ProductMemoryServices()
 
@@ -15,8 +17,6 @@ productService.create({
   createdAt: new Date(),
   updatedAt: new Date(),
 })
-
-console.log(productService.getAll())
 
 const productService2 = new ProductMemoryServices()
 productService2.add({
@@ -39,15 +39,12 @@ productService2.add({
   }
 })
 
-console.log(productService2.getAll())
-console.log({
-  '1': productService.getAll(),
-  '2': productService2.getAll()
-})
-
-console.log(productService === productService2)
-
-const a = new ProductMemoryServices()
-const b = new ProductMemoryServices()
-
-console.log(a === b)
+const productsHttp = new ProductHttpService();
+const width = process.stdout.columns
+const products = await productsHttp.getAll()
+process.stdout.write('\x1B[2J\x1B[0f'); // Metodo ANSI para limpiar la pantalla
+console.time()
+console.log('_'.repeat(width))
+console.log(products.length)
+console.log(products.map(item => item.price))
+console.timeEnd()

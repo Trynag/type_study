@@ -1,6 +1,6 @@
 import { UpdateProductDto } from "../../app/products/product.dto.mjs";
 import { CreateProductDto } from "../dtos/product.dto";
-import { Product } from "./product.model";
+import { Product } from "./product.model";  
 
 export interface ProductService {
   getAll(): Promise<Product[]> | Product[]

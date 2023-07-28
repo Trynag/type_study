@@ -13,7 +13,7 @@ export class ProductMemoryServices implements ProductService{
   create (data: CreateProductDto): Product {
     const newProduct = {
       ...data,
-      id: faker.datatype.uuid(),
+      id: faker.string.uuid(),
       category: {
         id: data.categoryId,
         name: faker.commerce.department(),
