@@ -42,9 +42,25 @@ productService2.add({
 const productsHttp = new ProductHttpService();
 const width = process.stdout.columns
 const products = await productsHttp.getAll()
-process.stdout.write('\x1B[2J\x1B[0f'); // Metodo ANSI para limpiar la pantalla
-console.time()
+
+process.stdout.write('\x1B[2J\x1B[0f'); 
+console.log('\n')
 console.log('_'.repeat(width))
-console.log(products.length)
+console.log(' Get All\n')
+
+console.log('Length: ', products.length)
 console.log(products.map(item => item.price))
-console.timeEnd()
+
+const productId = products[0].id
+
+productsHttp.update(productId, {
+  title: 'cambio',
+  price: 384923
+})
+
+console.log('\n')
+console.log('_'.repeat(width))
+console.log(' Find One \n')
+
+const product = await productsHttp.findOne(productId)
+console.log(product)

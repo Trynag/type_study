@@ -12,7 +12,7 @@ export class ProductHttpService implements ProductService{
     const { data } = await axios.get<Product[]>(this.url)
     return data
   }
-  
+
   async update(id: Product['id'], changes: UpdateProductDto) {
     const { data } = await axios.put(`${this.url}/${id}`, changes)
     return data
