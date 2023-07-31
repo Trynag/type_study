@@ -2,7 +2,7 @@
 
 Estudio en typescript
 
-Todo esto sale del estudio de directos de Midudev y Platzi
+Todo esto sale del estudio de directos de Midudev y Platzi. ts-node solo es compatible con la version 18.6.0 de NodeJS
 
 ## Como ejecutar TS-NODE con ESNEXT
 
