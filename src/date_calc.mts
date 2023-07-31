@@ -20,4 +20,4 @@ const timeNowMinutes = getMinutes(timeNow)
 const isTime = convertTimeToString(timeSleepHours, timeSleepMinutes) === convertTimeToString(timeNowHours, timeNowMinutes)
 const subTime = subHours(timeSleep, timeNowHours)
 
-isTime ? console.log('A DORMIR PERRO HPTA') : console.log(`Aun no rei, falta ${getHours(subTime)}`)
+isTime ? console.log('A DORMIR PERRO HPTA') : console.log(`Aun no rei, falta -${getHours(subTime)}`)

@@ -14,17 +14,17 @@ export class ProductHttpService implements ProductService{
   }
 
   async update(id: Product['id'], changes: UpdateProductDto) {
-    const { data } = await axios.put(`${this.url}/${id}`, changes)
+    const { data } = await axios.put<Product>(`${this.url}/${id}`, changes)
     return data
   }
 
   async create(dto: CreateProductDto) {
-    const { data } = await axios.post(this.url, dto)
+    const { data } = await axios.post<Product>(this.url, dto)
     return data
   }
   
   async findOne(id: Product['id']) {
-    const { data } = await axios.get(`${this.url}/${id}`)
+    const { data } = await axios.get<Product>(`${this.url}/${id}`)
     return data
   }
 }
