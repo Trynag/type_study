@@ -6,7 +6,10 @@ export interface InterfaceCreateCategoryDto extends Omit<Category, 'id'> {}
 export class CreateCategoryDto implements InterfaceCreateCategoryDto {
   @IsNotEmpty()
   @Length(4, 20)
-  name!: string
+  name!: string 
+  /*
+    esta es una forma de definir parametros sin constructor, el '!' quiere decir, que la variable sera declarada en otro momento.
+  */
 
   @IsUrl()
   @IsNotEmpty()
@@ -17,11 +20,15 @@ export class CreateCategoryDto implements InterfaceCreateCategoryDto {
   access?: AccessType | undefined
   createdAt!: Date
   updatedAt!: Date
+
+  constructor(
+    private param: string
+  ) {} //Perfectamente podemos tener ambos parametros
 }
 
-const categoryProbe = new CreateCategoryDto()
-categoryProbe.name = 'as'
-categoryProbe.image = 'https'
+const categoryProbe = new CreateCategoryDto('param')
+categoryProbe.name = 'as'     //
+categoryProbe.image = 'https' // Aqui definimos las variables que no estan en el constructor
 
 try{
   await validateOrReject(categoryProbe)
